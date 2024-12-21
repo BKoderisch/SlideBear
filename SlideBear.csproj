@@ -6,11 +6,16 @@
 	<ImplicitUsings>enable</ImplicitUsings>
 	<UseWindowsForms>true</UseWindowsForms>
 	<UseWPF>true</UseWPF>
+	<ApplicationIcon>Resources\158b533adcc8fcf851f15dd8961ccd0c.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <None Remove="Resources\paw.cur" />
 	  <None Remove="Resources\polar-bear.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\158b533adcc8fcf851f15dd8961ccd0c.ico" />
 	</ItemGroup>
 
 	<ItemGroup>
