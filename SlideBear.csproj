@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+	<OutputType>WinExe</OutputType>
+	<TargetFramework>net8.0-windows</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<UseWindowsForms>true</UseWindowsForms>
+	<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\paw.cur" />
+	  <None Remove="Resources\polar-bear.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Office.Interop.PowerPoint" Version="15.0.4420.1018" />
+	  <PackageReference Include="MicrosoftOfficeCore" Version="15.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Resources\paw.cur">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\polar-bear.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
+
+</Project>
