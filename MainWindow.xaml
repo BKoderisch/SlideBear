@@ -97,7 +97,7 @@
                           HorizontalAlignment="Stretch" 
                           ScrollViewer.VerticalScrollBarVisibility="Visible" 
                           VerticalAlignment="Top" ScrollViewer.CanContentScroll="False" 
-                          MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Grid}} - 30"
+                          MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
                           >
                     <ListView.View>
                         <GridView>
