@@ -138,6 +138,7 @@ namespace SlideBear
             }
 
             MessageBox.Show("Ausgewählte Präsentationen wurden mit hilfe der Eisbären erfolgreich generiert.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
+            System.Diagnostics.Process.Start("explorer.exe", targetFolder);
         }
 
 
@@ -153,9 +154,13 @@ namespace SlideBear
                 {
                     foreach (Microsoft.Office.Interop.PowerPoint.Shape shape in slide.Shapes)
                     {
-                        if (shape.TextFrame?.TextRange?.Text.Contains("<Datum>") == true)
+                        if (shape.HasTextFrame == MsoTriState.msoTrue &&
+                            shape.TextFrame.HasText == MsoTriState.msoTrue)
                         {
-                            shape.TextFrame.TextRange.Text = shape.TextFrame.TextRange.Text.Replace("<Datum>", model.Date);
+                            if (shape.TextFrame?.TextRange?.Text.Contains("<Datum>") == true)
+                            {
+                                shape.TextFrame.TextRange.Text = shape.TextFrame.TextRange.Text.Replace("<Datum>", model.Date);
+                            }
                         }
                     }
                 }
