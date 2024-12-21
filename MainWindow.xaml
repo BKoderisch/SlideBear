@@ -1,6 +1,6 @@
 ﻿<Window x:Class="SlideBear.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:SlideBear"
         Title="SlideBear"
         Height="500"
         Width="900"
@@ -61,6 +61,8 @@
             <Setter Property="Foreground" Value="#2E3A59" />
             <Setter Property="Margin" Value="10,5" />
         </Style>
+
+        <local:SubtractMarginConverter x:Key="SubtractMarginConverter" />
     </Window.Resources>
 
     <Grid>
@@ -97,7 +99,7 @@
                           HorizontalAlignment="Stretch" 
                           ScrollViewer.VerticalScrollBarVisibility="Visible" 
                           VerticalAlignment="Top" ScrollViewer.CanContentScroll="False" 
-                          MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
+                          MaxHeight="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Grid}, Converter={StaticResource SubtractMarginConverter}, ConverterParameter=60}"
                           >
                     <ListView.View>
                         <GridView>
